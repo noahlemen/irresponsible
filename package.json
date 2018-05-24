@@ -1,0 +1,45 @@
+{
+  "name": "@kedromelon/irresponsible",
+  "version": "0.1.0",
+  "description": "manage state irresponsibly",
+  "main": "lib/irresponsible.js",
+  "module": "lib/irresponsible.es.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "rollup -c",
+    "test": "jest",
+    "format": "prettier --write **.*.{js,json,md}",
+    "prepublish": "npm run clean && npm run build",
+    "precommit": "lint-staged",
+    "example": "parcel example/index.html"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": ["prettier --write", "git add"]
+  },
+  "author": "Noah Lemen <noah.lemen@gmail.com>",
+  "repository": "https://github.com/kedromelon/irresponsible",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.4",
+    "lint-staged": "^7.1.2",
+    "parcel-bundler": "^1.8.1",
+    "prettier": "^1.12.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-test-renderer": "^16.4.0",
+    "rollup": "^0.59.3",
+    "rollup-plugin-babel": "^3.0.4"
+  }
+}
